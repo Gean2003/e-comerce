@@ -1,9 +1,10 @@
 import axios from 'axios'
-import React from 'react'
+import React, {useState} from 'react'
 import getConfig from '../../utils/getConfig'
 
-const ProductCartInfo = ({product, getAllProductCard}) => {
+const ProductCartInfo = ({product, getAllProductCard, toggleMenu}) => {
 
+    useState()
 
     const handleDeleteProduct = () => {
 	    
@@ -14,10 +15,12 @@ const ProductCartInfo = ({product, getAllProductCard}) => {
 	    .catch(err => console.log(err))
     }
 
+
+
     return (
-    <article className='w-[370px] border py-2 px-3 rounded-[5px] relative' >
+	<article className={` w-[370px] border py-2 px-3 rounded-[5px] ${toggleMenu != true ? 'relative' : 'static'} `} >
     
-	<div className='absolute cursor-pointer right-4 top-[15px]'>
+	    <div className={ `${toggleMenu != true ? 'absolute' : ' hidden' } cursor-pointer right-4 top-[15px]` }>
 	    <i className='cursor-pointer text-red-500 text-[20px] bx bx-trash' onClick={handleDeleteProduct}></i>
 	</div>
 
@@ -31,7 +34,7 @@ const ProductCartInfo = ({product, getAllProductCard}) => {
 	</div>
 
 	<div className='flex justify-end my-2'>
-	    <p className='text-gray-400'>total : </p> <span className='font-semibold'> {product.price}</span>
+	    <p className='text-gray-400'>total : </p> <span className='font-semibold'> {product.price * product.productsInCart.quantity}</span>
 	</div>
     </article>
     )

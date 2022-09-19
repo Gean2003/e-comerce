@@ -72,10 +72,10 @@ function App() {
 	  <Route path='/login' element={ <Login isOn={isOn} /> } />
 
 	<Route element={ <ProtectedRoutes /> }>
-		 <Route path='/purchases' element = { <Purchases /> }/>
+		 <Route path='/purchases' element = { <Purchases isOn={isOn} /> }/>
 		 <Route path='/product/:id' element={ <ProductDetail  isOn={isOn}
 								toggleMenu={toggleMenu}/> } />
-	    <Route path='/cart' element={ <Cart /> } />
+	    <Route path='/cart' element={ <Cart toggleMenu={toggleMenu} /> } />
 	</Route>
 	 
 

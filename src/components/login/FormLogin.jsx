@@ -23,23 +23,23 @@ const FormLogin = ({isOn}) => {
     }
 
     return (
-	<div className={` ${isOn != true ? ' card' : 'bg-[#3A3B3C] ' } h-[400px] lg:w-[350px]  mx-auto w-[330px] py-3 `}>
+	<div className={` ${isOn != true ? 'bg-[#E4E6EB]' : 'alpha ' } h-[400px] lg:w-[350px] rounded-md  mx-auto w-[330px] py-3 `}>
 	    <form  className='flex flex-col items-center justify-center w-full h-full gap-6' onSubmit={handleSubmit(submit)} >
-		<h2 className='text-center'>Login</h2>
+		<h2 className='font-medium text-center text-[20px]'>Login</h2>
 
-	<div className='flex gap-2'>
+	<div className='flex flex-col gap-2'>
 	    <label className='text-[15px]' >Email</label>
-	    <input className='py-1  w-[200px] rounded-[5px]' {...register('email')} type="email" id='email' />
+	    <input className='py-1  w-[200px] rounded-[3px]' {...register('email')} type="email" id='email' />
 	</div>
 
-	<div className='flex gap-1'>
+	<div className='flex flex-col gap-1'>
 	    <label className='text-[15px]' htmlFor="">Password</label>
-	    <input className='py-1  w-[200px] rounded-[5px]' {...register('password')} type="password" id='password' />
+	    <input className='py-1  w-[200px] rounded-[3px]' {...register('password')} type="password" id='password' />
 	</div>
 	
 		<div className='flex items-center justify-center'>
 		    
-		    <button className='lg:hover:scale-105 transition-all text-white w-[200px] px-3 py-3 bg-red-500'>Login</button>
+		    <button className='lg:hover:scale-105 transition-all rounded-sm text-white font-medium w-[200px] px-3 py-3 bg-red-500'>Login</button>
 		</div>
 	    </form>
 	</div>

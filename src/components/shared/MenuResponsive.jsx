@@ -9,7 +9,7 @@ const MenuResponsive = ({handleToggleMenu}) => {
 
 		    <li> <NavLink to='/login' onClick={handleToggleMenu} className={({isActive}) => isActive ? 'text-red-500 ' : ''}> <i className='bx bxs-user' ></i> Login</ NavLink> </li>
 			<li><NavLink to='/purchases' onClick={handleToggleMenu} className={({isActive}) => isActive ? 'text-red-500' : ''}> <i className='bx bxs-purchase-tag-alt' ></i> Purchases</NavLink> </li>
-	            <li><h2><i className='bx bx-cart-download' ></i> Cart</h2></li>
+	            <li> <NavLink to='/cart' onClick={handleToggleMenu} className={({isActive}) => isActive ? 'text-red-500' : ''}><i className='bx bx-cart-download' ></i> Cart</NavLink> </li>
     </ul>
     )
 

@@ -23,12 +23,12 @@ const CardHome = ({product, isOn}) => {
 	}
 
 	axios.post(url, obj, getConfig() )
-	    .then( res )
+	    .then()
 	    .catch(err => console.log(err))
     }
 
     return (
-	<div onClick={handleClick}  className={` ${isOn === true ? 'bg-[#3A3B3C] rounded' : 'bg-[#E4E6EB]'} my-7 lg:my-0 lg:mx-0 mx-auto w-[330px] lg:hover:scale-105 lg:transition-all lg:cursor-pointer lg:w-[350px] lg:py-3 rounded-2xl lg:px-3`} >
+	<div onClick={handleClick}  className={` ${isOn === true ? 'bg-[#3A3B3C] rounded text-black' : 'bg-[#E4E6EB]'} my-7 lg:my-0 lg:mx-0 mx-auto w-[330px] lg:hover:scale-105 lg:transition-all lg:cursor-pointer lg:w-[350px] lg:py-3 rounded-2xl lg:px-3`} >
 	    <header className='w-[250px] h-[200px] mx-auto lg:w-[280px] lg:h-[250px] lg:overflow-hidden lg:mx-auto'>
 		<img className='object-contain w-full h-full lg:w-full lg:h-full' src={product.productImgs} alt="" />
 	</header>

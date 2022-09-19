@@ -52,5 +52,9 @@
     margin-top: 50px;
 }
 
+.alpha {
+    background-color: rgba(40, 40, 40, .5);
+}
+
 
 @tailwind utilities;

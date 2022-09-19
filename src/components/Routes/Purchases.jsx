@@ -4,7 +4,7 @@ import {useNavigate} from 'react-router-dom'
 import getConfig from '../../utils/getConfig'
 import PurchasesCard from '../purchases/PurchasesCard'
 
-const Purchases = () => {
+const Purchases = ({isOn}) => {
 
     const navigate = useNavigate()
     const [purchaseProducts, setPurchaseProducts] = useState()
@@ -38,7 +38,8 @@ const Purchases = () => {
 	    purchaseProducts?.data.purchases.map(product => (
 	    
 		<PurchasesCard key={product.cart.id}
-				product={product}/>
+				product={product}
+				isOn={isOn}/>
 
 	    ))
 	}

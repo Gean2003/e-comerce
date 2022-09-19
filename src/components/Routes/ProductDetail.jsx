@@ -11,15 +11,18 @@ const ProductDetail = ({isOn, toggleMenu}) => {
     const [count, setCount] = useState(1)
 
     const {id} = useParams()
-    
-    useEffect(() => {
-	const url = `https://ecommerce-api-react.herokuapp.com/api/v1/products/${id} `
+ 
+    const getProductInfo = () => {
+	    const url = `https://ecommerce-api-react.herokuapp.com/api/v1/products/${id} `
 	axios.get(url)
 	    .then(res => setProductInfo(res.data.data.product))
 	    .catch(err => console.log(err))
-    }, [])
+    }
+
+    useEffect(() => {
+	getProductInfo()
+    }, [id])
     
-    // console.log(productInfo)
 
     const navigate = useNavigate()
 
@@ -45,12 +48,14 @@ const ProductDetail = ({isOn, toggleMenu}) => {
 	const url = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
 	const obj = {
 	    id: productInfo.id,
-	    quantity: 1
+	    quantity: count
 	}
 
 	axios.post(url, obj, getConfig() )
 	    .then( )
 	    .catch(err => console.log(err))
+
+	getProductInfo()
     }   
 
     return (
@@ -94,7 +99,8 @@ const ProductDetail = ({isOn, toggleMenu}) => {
 
 	</div>
 
-	<SimilarProduct productInfo = {productInfo}/>
+	<SimilarProduct productInfo = {productInfo}
+			isOn={isOn}/>
     </div>
     )
 }

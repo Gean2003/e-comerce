@@ -9,7 +9,7 @@ const Header = ({toggleMenu, handleToggleMenu, isOn}) => {
     return (
 	<header className='flex items-center justify-between w-full py-1 sm:py-3 sm:h-[60px]'>
 	    <NavLink to='/'>
-		<h1 className='px-4 py-2 font-bold lg:text-4xl'>e-commerce</h1>
+		<h1 className='px-4 py-2 font-bold text-[30px] lg:text-4xl'>e-commerce</h1>
 	    </NavLink>
 	    <nav>
 		<div className={`flex justify-end sm:hidden clip ${toggleMenu === false? 'clip' : 'open '}  ${isOn === true ? 'openDarkMode' : ' '}  border-black` }>
